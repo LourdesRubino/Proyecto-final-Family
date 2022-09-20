@@ -1,0 +1,73 @@
+@mixin dimension{
+    border-radius: 1.5rem;  
+    width: 320px ;
+    height: 320px ;
+ }
+ @mixin estfoot{
+    font-size: 15px;
+    color: $colortext;
+    font-weight:$font;
+  }
+  @mixin dimension2{
+    margin-top: $martop;
+    border-radius: 1.5rem;  
+    width: 320px ;
+    height: 320px ;
+ }
+ @mixin contactosuscripcion{
+    color: $textespecifico;
+    font-size:$size2;
+    font-weight:$font;
+  }
+  @mixin grid2{ 
+    border-radius: 1.5rem;  
+    width: 270px ;
+    height: 400px ;
+  }
+  @mixin nosotros{
+    grid-area: Nosotros;
+    margin-top: 20px;
+   }
+   @mixin grid4 { 
+    border-radius: 1.5rem;  
+    width: 360px ;
+    height: 400px ;
+    } 
+ 
+    @mixin grid5 { 
+    margin-top: 30px;
+    border-radius: 1.5rem;  
+    width: 360px ;
+    height: 400px ;
+    } 
+    @mixin grid6{ 
+    border-radius: 1.5rem;
+    width: 420px ;
+    height: 500px ;
+    margin-top: 0;
+    margin-left: 40px;
+    }
+    @mixin grid{ 
+      display: grid;
+    }
+   @mixin center {
+    justify-content: center;
+   }
+   @mixin flexc {
+    flex-direction: column;
+   }
+   @mixin bgimg {
+   background-position: center center;
+   height: 100%;
+   }
+   @mixin marca {
+   color: #8D4F2A;
+   font-size: 20px;
+   margin-left: 10px;
+   }
+   @mixin dimensionmarca {
+   margin-left: 20px;
+   margin-bottom: 20px;
+  
+   }
+  

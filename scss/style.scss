@@ -1,0 +1,378 @@
+
+@import "Base/variables";
+@import "Base/extend";
+@import "Base/mixing";
+@import"Base/mapa";
+
+
+
+*{ 
+    box-sizing: border-box;
+    }
+    .compu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: $top2;
+        z-index: 2;    
+        background-color: $textsecun;
+        nav{
+            ul {
+            display: flex;
+            column-gap: 15px;
+            margin-top: $top2;
+            margin-right: 15px;
+      
+            li {
+                list-style: $lstyle;
+                color:$colortext; 
+                font-size: $size2;    
+                text-decoration: $lstyle;
+                font-weight: $font;
+                transition: 1.2s;
+            } 
+            li:hover {
+                @extend%hoverli   
+            } 
+            } 
+            } 
+        }
+
+        .logo {
+            color:$colortext;
+            font-size: $size;
+            padding: $pading;
+            text-decoration:$lstyle;
+            margin-top:$top;
+            font-weight: $fw;
+            transition: 1.2s;
+        }
+           .logo:hover{
+            transform: scale(1.2);
+            color: $colortext;
+        }
+        .nav-item.dropdown{
+            color:$colortext;
+            margin-bottom: $bot;
+            list-style: $lstyle;
+            margin-left: 15px;
+            font-size: $size;
+            margin-top:30px ;
+          }
+        .dropdown-item{
+         color: $colortext;
+         }
+        .dropdown-item:hover{
+        color: $textsecun;
+        background-color: $colortext;
+        }
+        .carousel-inner {
+            margin-bottom: 45px; }
+           
+        .card{
+        margin-left:200px ;
+        border:$bord;
+        margin-bottom: $bot;
+        margin: 12px;
+        cursor: default;
+        transition: all 600ms ease;
+        }
+              
+        .card:hover{
+        transform:translateY(-3%) ;
+        }
+        .button {
+        background-color:$bgbutton;
+        color: $textbutton;
+        border: $bgbutton;
+        border-radius: $bora;
+        padding: $pading;
+        margin-top: 20px; }
+                  
+        .button:hover {
+            @extend%hoverbboot; }
+            
+        .card-text{ 
+        color: $colortext;
+        }
+        
+        .c-home{
+        @include grid;
+        grid-template-columns: auto ;
+        grid-template-rows: 0.3fr 0.3fr 0.3fr;
+        grid-template-areas: "imgh"
+                                 "imgm"
+                                 "imgni";
+        @include center;
+            
+        }
+        .imgh{ 
+        grid-area: imgh;
+        @include dimension 
+        }
+        .imgm{
+        grid-area: imgm;
+        @include dimension2
+        }
+        .imgni{
+        grid-area: imgni;
+        @include dimension2
+        }
+        footer{ 
+        text-align: center;
+        margin-top: 150px;
+        }
+        .direccion {
+        @include estfoot;}
+        .mail {
+        @include estfoot;}
+        .numero{ 
+        @include estfoot;
+        }
+        .autor{ 
+        @include estfoot;
+        }
+        .dias { 
+        @include estfoot;
+        }
+        .horario { 
+        @include estfoot;
+        }
+        .fixed {
+        margin-left: 1100px;
+        margin-top: 100px;
+        position: fixed;
+        bottom: 0;
+        right: 0; }
+        form {
+        width: 450px;
+        margin: auto; }
+        
+        input, textarea {
+        width: $Width;
+        margin-bottom:$bot ;
+        padding: 7px;
+        font-size: $size3;
+        font-weight:$font;
+    
+        }
+        .contacto {
+        @include contactosuscripcion; }
+        .p3 {
+        @include contactosuscripcion;}
+        .boton{
+            color:map-get($map:$botonc , $key:colc );
+            background-color: map-get($map: $botonc, $key:bcolor );
+            border: map-get($map: $botonc, $key:bord );
+            border-radius: map-get($map: $botonc, $key:bor );
+            }
+        
+        .boton:hover{
+            @extend%hoverboton;
+        }
+        
+        .Nosotros {
+            margin-top: $martop;
+            margin-left: 10px;
+            color:$colortext;
+            font-weight:$font;
+            margin-top: 50px; }
+  
+        .marcaimg{
+          width: $Width;
+        }
+       
+        
+        @media screen and (max-width:600px) { 
+            .compu{ 
+              @include flexc;
+            }
+            .compunos{ 
+            
+              display: none; 
+            }
+          }
+          @media screen and (min-width:600px){ 
+            .compu{ 
+              @include flexc;
+            }
+            .c-home{ 
+             @include grid;
+             grid-template-columns: auto auto ;
+             grid-template-rows: 0.3fr 0.3fr ;
+             grid-template-areas: "imgh imgm"
+                                  "imgni imgni";
+             @include center;
+             
+              }
+              .imgh{ 
+                grid-area: imgh;
+                @include grid2;
+              }
+              .imgm{
+                grid-area: imgm;
+                margin-top: $martop;
+                @include grid2;
+                margin-top: $top;
+                margin-left: 40px;
+               }
+               .imgni{
+                grid-area: imgni;
+                @include grid2;
+                margin-top: 40px;
+              
+               } 
+               .compunos{ 
+                display: none; 
+              }
+          }
+          @media screen and (min-width:768px){
+            .compu{ 
+            @include flexc;
+
+          }
+          .c-home{ 
+           @include grid;
+           grid-template-columns: auto auto ;
+           grid-template-rows: 0.3fr 0.3fr ;
+           grid-template-areas: "imgh imgm"
+                                "imgni imgni";
+           @include center;
+           
+            }
+            .imgh{ 
+            grid-area:imgh;
+            @include grid4;
+            }
+            .imgm{
+              grid-area: imgm;
+             @include grid5;
+              margin-top:$top;
+              margin-left: 40px;
+             }
+             .imgni{
+              grid-area: imgni;
+              @include grid5;
+              margin-top: 40px;
+            
+             } 
+            
+             .compunos{ 
+              display: none; 
+            }
+            }
+        @media screen and (min-width:1024px) { 
+          .bnos {
+            background-image: url(../img/noscomp.png);
+           @include bgimg
+          }
+        
+          .compu{
+          flex-direction: row;
+
+           }
+           li{
+           margin-top: 20px;
+           }
+        
+           .c-home{ 
+            @include grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 0.3fr 0.3fr 0.3fr ;
+            grid-template-areas: "imgh imgm imgni";
+            @include center;
+            
+             }
+             .imgh{ 
+               grid-area: imgh;
+               border-radius: $borgrid;  
+               width: 420px ;
+               height: 500px ;
+             }
+             .imgm{
+               grid-area: imgm;
+               margin-top: $borgrid;
+               @include grid6;
+              }
+              .imgni{
+               grid-area: imgni;
+               @include grid6;
+             
+              } 
+        
+           .Nosotros{ 
+            margin-top: $martop;
+            margin-left: 10px;
+            color:$colortext;
+            font-weight:$font;
+            margin-top: 200px;
+            display: none;
+           }
+           .cel{
+            display: none;
+        
+            }
+            .compunos{ 
+              
+              margin-top: $martop;
+              margin-left: 10px;
+              color:$colortext;
+              font-weight:$font;
+              margin-top: 260px;
+              display: block; 
+            }
+        }
+        
+        .bcont {
+          background-image: url(../img/fondoc.png);
+          @include bgimg
+        } 
+        .marca1{
+            @include marca
+           }
+          .marca2{
+            @include marca
+           }
+          .marca3{ 
+            @include marca
+          }
+          .Orden{ 
+            text-align: center;
+            @include marca
+          }
+          .invierno-chicos{ 
+            margin-bottom:$marbot;
+            width: $Width;
+          }
+          .marca{ 
+            margin-top: 50px;
+          @include dimensionmarca
+          
+          }
+          .marca1{ 
+          @include dimensionmarca
+          }
+          .img{
+            width: $Width;
+           }
+           .madre{
+            
+            width: $Width;
+            margin-bottom: 50px;
+            }
+          
+          
+
+        
+
+            
+
+    
+  
+               
+
+
+
+        
+        
